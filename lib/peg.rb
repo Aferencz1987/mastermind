@@ -3,7 +3,9 @@ class Peg
               :position
 
   def initialize(color, position)
-    @color = color #r or R has to work
+    @color = color #r or R has to work(gets.chomp.downcase)
     @position = position
   end
+
+  # instert shuffled [] somewhere in here
 end
