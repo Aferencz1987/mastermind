@@ -1,6 +1,8 @@
 puts "Welcome to MASTERMIND
 
-Would you like to (p)lay, read the (i)nstructions, or (q)uit?"
+I have generated a beginner sequence with four elements made up of: (r)ed,
+(g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game.
+What's your guess?"
 
 print "> "
 start = $stdin.gets.chomp
@@ -17,6 +19,6 @@ elsif start == "i"
   print "> "
   instructions = $stdin.gets.chomp
 
-else start == "q" # Print out CSV?
+else start == "q" 
   puts "Well, fine then.  We didn't want to play with you either."
 end
