@@ -28,11 +28,8 @@ class MessagesTest < Minitest::Test
   end
 
   def test_length_error_message
-    # skip
     message = Messages.new
-
     expected = message.error_message
-
     assert_equal expected, message.error_message
   end
 
@@ -44,11 +41,16 @@ class MessagesTest < Minitest::Test
     assert_equal expected, message.play
   end
 
-  def test_can_cheat
-    skip
+  def test_winner_message
+    #skip
     message = Messages.new
-    expected = [computer]
+    expected = message.winner_message
+    assert_equal expected, message.winner_message
+  end
 
-    assert_equal expected, message.cheat
+  def test_gives_feedback
+    message = Messages.new
+    expected = message.feedback
+    assert_equal expected, message.feedback
   end
 end
