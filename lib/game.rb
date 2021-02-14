@@ -1,10 +1,14 @@
+
 class Game
+  attr_reader :code_options,
+              :compcode
+  def initialize
+    @code_options = ['r', 'b', 'g', 'y']
+    @compcode = @code_options.shuffle
+  end
 
-end
+  def cheat
+    print @compcode
+  end
 
-
-def secret_code
-  code_options = ['r', 'g', 'b', 'y']
-  secret_code << code_options.shuffle
-   p secret_code
 end
