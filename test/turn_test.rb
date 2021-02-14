@@ -1,7 +1,9 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/message.rb'
+require './lib/messages.rb'
 require './lib/turn.rb'
+require './lib/game.rb'
+require './lib/user.rb'
 
 class TurnTest < Minitest::Test
 
@@ -11,10 +13,10 @@ class TurnTest < Minitest::Test
   end
 
   def test_length_error
-    message = Messages.new
-    
+    turn = Turn.new
+    user = User.new
     expected = true
-    assert_equal expected, turn.error_message
+    assert_equal expected, turn.length_error?
   end
 end
 
