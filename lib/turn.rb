@@ -1,26 +1,27 @@
 class Turn
 
   def initialize
-    @computer = []
+
   end
 
-  def length_error?
-    if input.count > 4 || input.count < 4
-      puts error_message.messages
-    else
-      true
-    end
-  end
+  # def length_error?
+  #   require "pry"; binding.pry
+  #
+  #   if user.count > 4 || user.count < 4
+  #     print "crap"#error_message.messages
+  #   else
+  #     true
+  #   end
+  # end
 
 end
 
 
 
+@compcode
 
-  # def challenge
-  #   computer.shuffle!
-  # end
-  #
+
+
   # def main_game
   #   puts "hey bud, type in some stuff"
   #   print "> "
