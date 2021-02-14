@@ -1,13 +1,17 @@
 class Messages
   attr_reader :beginning_message,
               :instruct,
-              :error
+              :error,
+              :winner_message,
+              :feeback
 
 
   def initialize
     @beginning_message = beginning_message
     @instruct = instruct
     @error = error
+    @winner_message = winner_message
+    @feedback = feedback
   end
 
   def welcome
@@ -45,18 +49,30 @@ You will be provided feedback per attempt. Feedback will look as follows:
 
   “'RRGB' has 3 of the correct colors with 2 in the correct positions You've taken 1 guess”
 
-You may press ‘q’ for quit at any time. Happy guessing!"
+You may press ‘q’ for quit at any time. Happy guessing!
+Press (p) to play!"
   end
 
   def error_message
     @error = puts "Hey friend, I noticed you have the wrong amount of elements. Try putting a total of 4 in."
   end
+
+  def winner_message
+    @winner_message = puts "Congratulations! You guessed the sequence {'GRRB'} in 8 guesses over {time}.
+
+    Do you want to (p)lay again or (q)uit?"
+  end
+
+  def feedback
+    @feedback = puts "{user_guess} has {amount} of the correct elements with {wrong_amount} in the correct positions
+    You've taken {num_of_guess} guess."
+  end
 end
 
-message = Messages.new
-# message.welcome
-# message.instructions
-message.error_message
+# message = Messages.new
+# # message.welcome
+# # message.instructions
+# message.error_message
 
 #Have a method called begin or start have it generate code and print out welcome message.
 
