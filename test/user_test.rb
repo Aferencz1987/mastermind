@@ -12,11 +12,4 @@ class UserTest < Minitest::Test
 
     assert_instance_of User, user
   end
-
-  def test_length_error
-    user = User.new('rgby')
-    assert_equal false, user.length_error?
-  end
 end
-
-#('r', 'g', 'b', 'y')
