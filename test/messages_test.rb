@@ -2,6 +2,8 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/turn.rb'
 require './lib/messages.rb'
+require './lib/game.rb'
+
 
 class MessagesTest < Minitest::Test
 
@@ -33,13 +35,6 @@ class MessagesTest < Minitest::Test
     assert_equal expected, message.error_message
   end
 
-  def test_play_starts_game
-    skip
-    message = Messages.new
-    expected =
-
-    assert_equal expected, message.play
-  end
 
   def test_winner_message
     #skip
