@@ -90,7 +90,7 @@ You may press (p) to play, you can press (q) to quit at any time."
   end
 
   def feedback
-    @feedback = puts "{user_guess} has {amount} of the correct elements with {wrong_amount} in the correct positions
+    @feedback = puts "#{game.guesses} has #{game.color_counter} of the correct elements with {wrong_amount} in the correct positions
     You've taken {num_of_guess} guess."
   end
 end
