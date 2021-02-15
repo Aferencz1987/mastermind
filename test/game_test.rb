@@ -26,10 +26,10 @@ class GameTest < Minitest::Test
 
   def test_counts_color_matches
     game = Game.new
-    game.guesses  = ["bbyy"]
-    game.compcode = ["bbyy"]
+    game.guesses  = "ybgb"
+    game.compcode = "rbyg"
 
-    assert_equal 2, game.color_counter
+    assert_equal 1, game.color_counter
   end
 
   # def test_counts_position_matches
