@@ -6,8 +6,8 @@ class Game
 
 
   def initialize
-    @compcode = compcode
-    @guesses = guesses
+    @compcode = ""
+    @guesses = ""
   end
 
   def color_counter
