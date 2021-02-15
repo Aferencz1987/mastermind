@@ -58,6 +58,63 @@ What's your guess?"
 
 
 
+# EACH METHODS
+# def color_counter
+#   color_count = []
+# user(guess).each do |guess|
+#   if comp_actual == guess.include?
+#   color_count << color_count.to_i
+#   end
+#   color_count
+# end
+#
+# def position_counter
+#   position_count = []
+# user(guess).each do |guess|
+#    [com_actual] == guess.index
+#   position_count << position_count.to_i
+#   end
+#   position_count
+# end
+
+
+  # def color_counter
+  #   color_count = @guesses.find_all do |guess|
+  #     if @compcode == guess
+  #       @compcode << guess.to_i
+  #   end
+  # end
+  #
+  # def position_counter
+  #   matches = guesses.map do |guess|
+  #     @compcode == guess
+  #   end
+  # end
+
+# WIN OFF THE BAT METHOD
+# def main_game
+#     if
+#       @guess[0] == @compcode[0] && @guess[1] == @compcode[1] && @guess[2] == @compcode[2] && @guess[3] == @compcode[3]
+#       puts "Congratulations! You guessed the sequence '#{@compcode}' in 8 guesses over #{time}.
+#             Do you want to (p)lay again or (q)uit?"
+#     else
+#       puts "nope, try again"
+#   end
+# end
+
+
+# @code_options.shuffle
+#   def cheat
+#     print @compcode
+#   end
+
+#
+# user(guess) = [y, y, y, y]
+# com_actual = [r, b, g, y]
+#
+#   try again
+
+###be told when they have succeeded  MESS
 
 
 
