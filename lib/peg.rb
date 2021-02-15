@@ -102,7 +102,8 @@ What's your guess?"
 #   end
 # end
 
-
+# THIS IS THE CHEAT METHOD!!!!
+# @code_options = code_options
 # @code_options.shuffle
 #   def cheat
 #     print @compcode
