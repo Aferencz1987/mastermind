@@ -89,13 +89,10 @@ You may press (p) to play, you can press (q) to quit at any time."
     Do you want to (p)lay again or (q)uit?"
   end
 
-
-
-
-  # def feedback
-  #   @feedback = puts "{user_guess} has {amount} of the correct elements with {wrong_amount} in the correct positions
-  #   You've taken {num_of_guess} guess."
-  # end
+  def feedback
+    @feedback = puts "{user_guess} has {amount} of the correct elements with {wrong_amount} in the correct positions
+    You've taken {num_of_guess} guess."
+  end
 end
 
 message = Messages.new
