@@ -13,11 +13,16 @@ class TurnTest < Minitest::Test
   end
 
   def test_length_error
-    turn = Turn.new
-    user = User.new
-    expected = true
-    assert_equal expected, turn.length_error?
+    user = User.new('rgby')
+    assert_equal false, user.length_error?
   end
+
+  # def test_length_error
+  #   turn = Turn.new
+  #   user = User.new
+  #   expected = true
+  #   assert_equal expected, turn.length_error?
+  # end
 end
 
 
