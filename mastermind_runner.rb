@@ -1,5 +1,4 @@
-# this is the file that will hold all the things
+require './lib/game.rb'
 
-# P, I, Q method lives here(have a conditional) 
-require './lib/peg.rb'
-require './lib/turn.rb'
+game = Game.new
+game.start

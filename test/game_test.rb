@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-# require './lib/messages.rb'
-require './lib/game.rb'
+require './lib/messages'
+require './lib/game'
 
 
 class GameTest < Minitest::Test
@@ -25,12 +25,17 @@ class GameTest < Minitest::Test
   end
 
   def test_counts_color_matches
+    # skip
     game = Game.new
-    game.guesses  = ["bbyy"]
-    game.compcode = ["bbyy"]
+    game.guesses  = "ybgb"
+    game.compcode = "rbyg"
 
-    assert_equal 2, game.color_counter
+    assert_equal 1, game.color_counter
   end
+
+  # def test_it_makes_code
+  #   game = Game.new
+
 
   # def test_counts_position_matches
   #   skip

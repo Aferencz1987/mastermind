@@ -1,8 +1,8 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/turn.rb'
-require './lib/messages.rb'
-require './lib/game.rb'
+require './lib/turn'
+require './lib/messages'
+require './lib/game'
 
 
 class MessagesTest < Minitest::Test

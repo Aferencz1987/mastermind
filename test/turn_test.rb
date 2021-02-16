@@ -6,15 +6,18 @@ require './lib/game.rb'
 require './lib/user.rb'
 
 class TurnTest < Minitest::Test
-
   def test_it_exists
     turn = Turn.new
     assert_instance_of Turn, turn
   end
 
   def test_length_error
-    user = User.new('rgby')
-    assert_equal false, user.length_error?
+    user = User.new
+    turn = Turn.new
+    message = Messages.new
+    turn.game.guesses = ("rgy")
+    # result = turn.message.error_message
+    assert_equal message.error_message, turn.length_error?
   end
 
   # def test_length_error
