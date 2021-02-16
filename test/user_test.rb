@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/turn.rb'
-require './lib/user.rb'
+require './lib/turn'
+require './lib/user'
 # require './lib/messages.rb'
 
 class UserTest < Minitest::Test
