@@ -9,6 +9,8 @@ class Game
     @answer = ""
     @message = Messages.new
     @turn_number = 0
+    @start_time = Time.now
+    @ending_time  = Time.now
   end
 
   def generate_code(number)
@@ -51,9 +53,8 @@ class Game
   end
 
   def game_loop
-    start_time
+    @start_time = Time.now
     @compcode = generate_code(4)
-      p @compcode
     @message.play
     @message.printz
     until end_game_conditions
@@ -64,7 +65,7 @@ class Game
       cheat_message if cheat
       puts feedback if !cheat
         if @answer == @compcode.join
-          ending_time
+          @ending_time = Time.now
           winner_message
           @message.printz
           input
@@ -121,16 +122,8 @@ class Game
     Do you want to (p)lay again or (q)uit?"
   end
 
-  def start_time
-    start = Time.now
-  end
-
-  def ending_time
-    ending = Time.now
-  end
-
   def total_time
-    time_taken = ending_time - start_time
+    time_taken = @ending_time - @start_time
     minutes = time_taken / 60
     seconds = time_taken % 60
     "#{minutes.to_i} minutes and #{seconds.to_i} seconds."
