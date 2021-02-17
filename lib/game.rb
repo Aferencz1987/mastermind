@@ -37,7 +37,7 @@ class Game
     elsif @answer == "i"
       puts @message.instructions
       @message.printz
-      @answer = gets.chomp
+      input
       if @answer == "p"
         game_loop
       elsif @answer == "q"
@@ -55,15 +55,16 @@ class Game
   def game_loop
     @start_time = Time.now
     @compcode = generate_code(4)
-    @message.play
+    p @message.play
     @message.printz
     until end_game_conditions
       @turn_number += 1
-      @message.printz
+      # @message.printz
       input
       length_error?
       cheat_message if cheat
       puts feedback if !cheat
+      @message.printz
         if @answer == @compcode.join
           @ending_time = Time.now
           winner_message
@@ -107,7 +108,7 @@ class Game
   end
 
   def feedback
-    "#{@answer.upcase} has #{color_counter} of the correct elements. You've taken #{@turn_number} guesses. Pick a new combination of (r)ed, (y)ellow, (g)reen, or (b)lue. The length needs to be four elements long."
+    "#{@answer.upcase} has #{color_counter} correct. You've taken #{@turn_number} guesses. Pick a new combination of (r)ed, (y)ellow, (g)reen, or (b)lue. The length needs to be four elements long."
   end
 
   def length_error?
