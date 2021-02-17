@@ -19,7 +19,7 @@ class Messages
   def instructions
      "The object of MASTERMIND is to guess a secret code created by the computer consisting of a series of 4 colors.  Guess any combination of (r)ed, (y)ellow, (g)reen, or (b)lue.  You may have any color repeat as many times as you’d like until a series of 4 is reached.  You will be provided feedback per attempt. Feedback will look as follows:
 
-  “'RRGB' has 3 of the correct colors with 2 in the correct positions You've taken 1 guess”
+  “RBGY has 2 correct. You've taken 3 guesses. Pick a new combination of (r)ed, (y)ellow, (g)reen, or (b)lue. The length needs to be four elements long.”
 
 You may press (p) to play, you can press (q) to quit at any time."
   end
