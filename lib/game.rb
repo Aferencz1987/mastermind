@@ -59,7 +59,6 @@ class Game
     @message.printz
     until end_game_conditions
       @turn_number += 1
-      # @message.printz
       input
       length_error?
       cheat_message if cheat
