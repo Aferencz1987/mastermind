@@ -11,7 +11,7 @@ class GameTest < Minitest::Test
     assert_instance_of Game, game
   end
 
-  def test_is_has_a_secret_code #WE NEED TO MAKE THIS WORK
+  def test_is_has_a_secret_code
     skip
     game = Game.new
     expected = Array
@@ -23,8 +23,9 @@ class GameTest < Minitest::Test
     game = Game.new
     game.answer  = "ybgb"
     game.compcode = "rbyg"
+    expected = 1
 
-    assert_equal 1, game.color_counter
+    assert_equal expected, game.color_counter
   end
 
   def test_can_cheat
@@ -52,17 +53,16 @@ class GameTest < Minitest::Test
   def test_it_quits
     skip
     game = Game.new
-    assert_equal false, game.quits?
+    expected = false
+    assert_equal expected, game.quits?
   end
 
   def test_length_error
+    skip
     game = Game.new
     message = Messages.new
     @answer = 5
-    assert_equal message.error_message, game.length_error?
+    expected = message.error_message
+    assert_equal expected, game.length_error?
   end
-
-
-
-
 end
