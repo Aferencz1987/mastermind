@@ -14,12 +14,12 @@ class GameTest < Minitest::Test
   def test_is_has_a_secret_code #WE NEED TO MAKE THIS WORK
     skip
     game = Game.new
-    expected = game.compcode
-    assert_equal expected, game.generate_code(4)
+    expected = Array
+    assert_instance_of expected, game.compcode
   end
 
   def test_counts_color_matches
-    # skip
+    skip
     game = Game.new
     game.answer  = "ybgb"
     game.compcode = "rbyg"
@@ -31,15 +31,38 @@ class GameTest < Minitest::Test
     skip
     game = Game.new
     expected = @compcode
-    assert_equal expected, game.cheat
+    assert_equal expected, game.cheat_message
   end
 
   def test_it_can_start
+    skip
     game = Game.new
     message = Messages.new
-    expected = message.welcome
-    require "pry"; binding.pry
+    expected = message.printz
     assert_equal expected, game.start
   end
+
+  def test_game_play
+    skip
+    game = Game.new
+    expected = @start_time
+    assert_equal expected, game.game_loop
+  end
+
+  def test_it_quits
+    skip
+    game = Game.new
+    assert_equal false, game.quits?
+  end
+
+  def test_length_error
+    game = Game.new
+    message = Messages.new
+    @answer = 5
+    assert_equal message.error_message, game.length_error?
+  end
+
+
+
 
 end
