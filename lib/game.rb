@@ -4,17 +4,11 @@ class Game
   attr_accessor :compcode,
                 :answer
 
-
-
-
   def initialize
-
     @compcode = generate_code(4)
     @answer = ""
     @message = Messages.new
     @turn_number = 0
-    # require "pry"; binding.pry
-
   end
 
   def generate_code(number)
@@ -57,22 +51,21 @@ class Game
   end
 
   def game_loop
+    start_time
     @compcode = generate_code(4)
+      p @compcode
     @message.play
     @message.printz
     until end_game_conditions
-      # if quits?
-      #   break
-      # end
-      cheat
       @turn_number += 1
       @message.printz
       input
       length_error?
-      puts feedback
+      cheat_message if cheat
+      puts feedback if !cheat
         if @answer == @compcode.join
-
-          @message.winner_message
+          ending_time
+          winner_message
           @message.printz
           input
           if @answer == "p"
@@ -83,14 +76,15 @@ class Game
             break
           end
         end
-    end
-
+      end
   end
 
   def cheat
-    if input == "c" || input == "cheat"
-      puts "Really?! Fine. It's #{@compcode.join.upcase}. Your smarter than this. Just kidding. We both know it's 'you're.'"
-    end
+    @answer == "c" || @answer == "cheat"
+  end
+
+  def cheat_message
+    puts "Really?! Fine. It's #{@compcode.join.upcase}. Your smarter than this. Just kidding. We both know it's 'you're.'"
   end
 
   def quits?
@@ -116,8 +110,29 @@ class Game
   end
 
   def length_error?
-    if @answer.length != 4
+    if @answer.length != 4 && !cheat
        @message.error_message
     end
+  end
+
+  def winner_message
+    puts "Congratulations! You guessed the sequence #{compcode.join.upcase} in 1 guess over #{total_time}.
+
+    Do you want to (p)lay again or (q)uit?"
+  end
+
+  def start_time
+    start = Time.now
+  end
+
+  def ending_time
+    ending = Time.now
+  end
+
+  def total_time
+    time_taken = ending_time - start_time
+    minutes = time_taken / 60
+    seconds = time_taken % 60
+    "#{minutes.to_i} minutes and #{seconds.to_i} seconds."
   end
 end
